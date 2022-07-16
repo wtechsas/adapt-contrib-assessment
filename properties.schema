@@ -1,0 +1,306 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "required": false,
+  "properties": {
+    "pluginLocations": {
+      "type": "object",
+      "required": true,
+      "properties": {
+        "config": {
+          "type": "object"
+        },
+        "course": {
+          "type": "object",
+          "properties": {
+            "_assessment": {
+              "type": "object",
+              "required": false,
+              "legend": "Evaluación",
+              "properties": {
+                "_isPercentageBased": {
+                  "type": "boolean",
+                  "required": true,
+                  "default": true,
+                  "title": "Basado en porcentaje",
+                  "inputType": "Checkbox",
+                  "help": "Determina si los valores de la 'nota de aprobación' deben tratarse como un porcentaje (predeterminado) o como la puntuación sin procesar y la corrección.",
+                  "validators": []
+                },
+                "_scoreToPass": {
+                  "type": "number",
+                  "required": false,
+                  "title": "Aprobado",
+                  "inputType": "Number",
+                  "default": 60,
+                  "help": "La puntuación mínima requerida por el alumno para aprobar la evaluación o la puntuación porcentual mínima si está 'basada en porcentajes'.",
+                  "validators": ["number"]
+                },
+                "_correctToPass": {
+                  "type": "number",
+                  "required": false,
+                  "title": "Número minimo de preguntas correctas",
+                  "inputType": "Number",
+                  "default": 60,
+                  "help": "El número mínimo de preguntas correctas requeridas por el alumno para aprobar la evaluación o el porcentaje mínimo correcto si es 'basado en porcentaje'.",
+                  "validators": ["number"]
+                }
+              }
+            }
+          }
+        },
+        "contentobject": {
+          "type": "object"
+        },
+        "article": {
+          "type": "object",
+          "properties": {
+            "_assessment": {
+              "type": "object",
+              "required": false,
+              "legend": "Evaluación",
+              "properties": {
+                "_isEnabled": {
+                  "type": "boolean",
+                  "required": true,
+                  "title": "¿Activar?",
+                  "inputType": "Checkbox",
+                  "validators": []
+                },
+                "_id": {
+                  "type": "string",
+                  "required": true,
+                  "title": "Nombre de la evaluación",
+                  "default": "",
+                  "inputType": "Text",
+                  "validators": [],
+                  "help": "Nombre único para la evaluación. Esto es requerido por otros complementos, como el componente 'Resultados de la evaluación' para identificar la evaluación y mostrar sus variables."
+                },
+                "_attempts": {
+                  "type": "number",
+                  "required": false,
+                  "title": "Intentos permitidos",
+                  "inputType": "Number",
+                  "default": -1,
+                  "validators": ["number"],
+                  "help": "Controla el número de intentos que el usuario puede tener en esta evaluación. Establézcalo en -1 (o 0) para permitir infinitos intentos."
+                },
+                "_isPercentageBased": {
+                  "type": "boolean",
+                  "required": true,
+                  "default": true,
+                  "title": "Basado en porcentaje",
+                  "inputType": "Checkbox",
+                  "help": "Determina si los valores de aprobación deben tratarse como porcentajes (predeterminado) o como puntuación sin procesar y corrección.",
+                  "validators": []
+                },
+                "_scoreToPass": {
+                  "type": "number",
+                  "required": false,
+                  "title": "Aprobado",
+                  "inputType": "Number",
+                  "default": 60,
+                  "help": "La puntuación mínima requerida por el alumno para aprobar la evaluación o la puntuación porcentual mínima si está 'basada en porcentajes'.",
+                  "validators": ["number"]
+                },
+                "_correctToPass": {
+                  "type": "number",
+                  "required": false,
+                  "title": "Número minimo de preguntas correctas",
+                  "inputType": "Number",
+                  "default": 60,
+                  "help": "El número mínimo de preguntas correctas requeridas por el alumno para aprobar la evaluación o el porcentaje mínimo correcto si es 'basado en porcentaje'.",
+                  "validators": ["number"]
+                },
+                "_includeInTotalScore": {
+                  "type": "boolean",
+                  "default": true,
+                  "title": "Incluir en la puntuación total",
+                  "inputType": "Checkbox",
+                  "help": "Determina si la puntuación de esta evaluación debe enviarse al LMS (sistemas de gestión del aprendizaje). La puntuación enviada es un porcentaje según 'Peso de Evaluación'.",
+                  "validators": []
+                },
+                "_assessmentWeight": {
+                  "type": "number",
+                  "required": false,
+                  "title": "Peso de evaluación",
+                  "inputType": "Number",
+                  "default": 1,
+                  "help": "Si hay varias evaluaciones en el curso, este valor controla la proporción de la puntuación LMS (sistemas de gestión del aprendizaje) que se atribuye a esta evaluación, es decir, 1 equivale al 100 %, 0,5 al 50 %, etc.",
+                  "validators": ["number"]
+                },
+                "_suppressMarking": {
+                  "type": "boolean",
+                  "required": true,
+                  "title": "Retrasar corrección de las preguntas",
+                  "inputType": "Checkbox",
+                  "help": "Determina si la corrección de preguntas se debe retrasar hasta la finalización de la evaluación o hasta que se hayan agotado todos los intentos.",
+                  "validators": []
+                },
+                "_isResetOnRevisit": {
+                  "type": "boolean",
+                  "required": true,
+                  "default": false,
+                  "title": "Restablecer al volver a visitar",
+                  "inputType": "Checkbox",
+                  "help": "Controla si la evaluación debe restablecerse automáticamente (hasta el número de intentos disponibles) cuando un usuario vuelve a visitar la página.",
+                  "validators": []
+                },
+                "_allowResetIfPassed": {
+                  "type": "boolean",
+                  "required": true,
+                  "default": false,
+                  "title": "¿Permitir reintentar una vez aprobado?",
+                  "inputType": "Checkbox",
+                  "help": "Controla si la evaluación se puede restablecer después de que se haya aprobado (mientras queden intentos).",
+                  "validators": []
+                },
+                "_scrollToOnReset": {
+                  "type": "boolean",
+                  "required": true,
+                  "default": false,
+                  "title": "Desplácese hasta ¿Reiniciar?",
+                  "inputType": "Checkbox",
+                  "help": "Controla si desplazarse a la evaluación después del reinicio o permanecer en la parte superior de la página de evaluación.",
+                  "validators": []
+                },
+                "_randomisation": {
+                  "type": "object",
+                  "required": false,
+                  "title": "Bloques aleatorios",
+                  "properties": {
+                    "_isEnabled": {
+                      "type": "boolean",
+                      "required": false,
+                      "title": "¿Activar?",
+                      "inputType": "Checkbox",
+                      "help": "Si la aleatorización está habilitada, se mostrará al usuario un número específico de bloques en un orden aleatorio.",
+                      "validators": []
+                    },
+                    "_blockCount": {
+                      "type": "number",
+                      "required": false,
+                      "default": -1,
+                      "title": "Recuento de bloques",
+                      "inputType": "Number",
+                      "validators": ["number"],
+                      "help": "El número de bloques para presentar al alumno. Establézcalo en -1 (o 0) para mostrar todos los bloques."
+                    }
+                  }
+                },
+                "_banks": {
+                  "type": "object",
+                  "required": false,
+                  "title": "Bancos de preguntas",
+                  "properties": {
+                    "_isEnabled": {
+                      "type": "boolean",
+                      "required": false,
+                      "title": "¿Activar?",
+                      "inputType": "Checkbox",
+                      "help": "Habilita la asociación de bloques de componentes de preguntas con un 'banco', lo que permite que las preguntas se agrupen y luego se representen a través de la propiedad 'Dividir'.",
+                      "validators": []
+                    },
+                    "_split": {
+                      "type": "string",
+                      "required": true,
+                      "title": "Separar",
+                      "default": "",
+                      "inputType": "Text",
+                      "validators": [],
+                      "help": "Esta es una lista de números separados por comas que corresponden a la cantidad de preguntas que se extraerán de cada banco de preguntas. La posición del número en la lista corresponde al 'ID del banco' asignado, p. \"3,2\" mostraría tres preguntas del Banco 1 y dos del Banco 2."
+                    },
+                    "_randomisation": {
+                      "type": "boolean",
+                      "required": false,
+                      "title": "Bancos de preguntas aleatorios",
+                      "inputType": "Checkbox",
+                      "help": "Controla si las preguntas se mostrarán en un orden aleatorio.",
+                      "validators": []
+                    }
+                  }
+                },
+                "_questions": {
+                  "type": "object",
+                  "required": false,
+                  "title": "Comportamiento de la pregunta",
+                  "properties": {
+                    "_resetType": {
+                      "type": "string",
+                      "required": false,
+                      "enum": ["soft", "hard"],
+                      "default": "hard",
+                      "title": "Tipo de reinicio",
+                      "inputType": {
+                        "type": "Select",
+                        "options": [{"val": "soft", "label": "suave"}, {"val": "hard", "label": "fuerte"}]
+                      },
+                      "validators": [],
+                      "help": "Determina si la pregunta se registrará como completada cuando se restablezca. Cuando se le asigna un valor de 'suave', el alumno puede continuar interactuando con él, pero el atributo completo permanece establecido en verdadero. Cuando se asigna 'fuerte', completo se establece en falso, y el alumno se verá obligado a completarlo nuevamente si se reinicia. Para 'suave', al usar el truco, establezca el atributo de finalización del truco en `_isInteractionComplete'."
+                    },
+                    "_canShowFeedback": {
+                      "type": "boolean",
+                      "required": false,
+                      "title": "Mostrar comentarios",
+                      "inputType": "Checkbox",
+                      "default": false,
+                      "help": "Permite al usuario ver comentarios sobre su respuesta.",
+                      "validators": []
+                    },
+                    "_canShowMarking": {
+                      "type": "boolean",
+                      "required": false,
+                      "title": "Mostrar marcado",
+                      "inputType": "Checkbox",
+                      "default": false,
+                      "help": "Muestra marcas al completar una pregunta.",
+                      "validators": []
+                    },
+                    "_canShowModelAnswer": {
+                      "type": "boolean",
+                      "required": false,
+                      "title": "Mostrar respuesta modelo",
+                      "inputType": "Checkbox",
+                      "default": false,
+                      "help": "Permite al usuario ver la 'respuesta modelo' en caso de que responda la pregunta incorrectamente.",
+                      "validators": []
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "block": {
+          "type": "object",
+          "properties": {
+            "_assessment": {
+              "type": "object",
+              "required": false,
+              "legend": "Evaluación",
+              "properties": {
+                "_quizBankID": {
+                  "type": "number",
+                  "required": false,
+                  "title": "Identificación del banco",
+                  "inputType": "Number",
+                  "default": 1,
+                  "help": "Se utiliza para agrupar bloques de componentes de preguntas en bancos asociados. Esto funciona junto con la propiedad 'Dividir' cuando se utilizan bancos de preguntas.",
+                  "validators": ["number"],
+                  "editorAttrs": {
+                    "step": 1,
+                    "min": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        "component": {
+          "type": "object"
+        }
+      }
+    }
+  }
+}
