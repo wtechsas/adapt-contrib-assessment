@@ -128,7 +128,7 @@
                   "title": "Peso de evaluación",
                   "inputType": "Number",
                   "default": 1,
-                  "help": "Si hay varias evaluaciones en el curso, este valor controla la proporción de la puntuación LMS (sistemas de gestión del aprendizaje) que se atribuye a esta evaluación, es decir, 1 equivale al 100 %, 0,5 al 50 %, etc.",
+                  "help": "Si hay varias evaluaciones en el Recurso, este valor controla la proporción de la puntuación LMS (sistemas de gestión del aprendizaje) que se atribuye a esta evaluación, es decir, 1 equivale al 100 %, 0,5 al 50 %, etc.",
                   "validators": ["number"]
                 },
                 "_suppressMarking": {
