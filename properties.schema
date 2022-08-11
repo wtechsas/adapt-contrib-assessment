@@ -200,7 +200,7 @@
                       "required": false,
                       "title": "¿Activar?",
                       "inputType": "Checkbox",
-                      "help": "Habilita la asociación de bloques de componentes de preguntas con un 'banco', lo que permite que las preguntas se agrupen y luego se representen a través de la propiedad 'Dividir'.",
+                      "help": "Habilita la asociación de bloques de componentes de preguntas con un 'banco', lo que permite que las preguntas se agrupen y luego se representen a través de la propiedad 'Separar'.",
                       "validators": []
                     },
                     "_split": {
