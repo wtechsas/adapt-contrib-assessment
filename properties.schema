@@ -34,7 +34,7 @@
                   "title": "Aprobado",
                   "inputType": "Number",
                   "default": 60,
-                  "help": "La puntuación mínima requerida por el alumno para aprobar la evaluación o la puntuación porcentual mínima si está 'basada en porcentajes'.",
+                  "help": "La puntuación mínima requerida por el estudiante para aprobar la evaluación o la puntuación porcentual mínima si está 'basada en porcentajes'.",
                   "validators": ["number"]
                 },
                 "_correctToPass": {
@@ -43,7 +43,7 @@
                   "title": "Número minimo de preguntas correctas",
                   "inputType": "Number",
                   "default": 60,
-                  "help": "El número mínimo de preguntas correctas requeridas por el alumno para aprobar la evaluación o el porcentaje mínimo correcto si es 'basado en porcentaje'.",
+                  "help": "El número mínimo de preguntas correctas requeridas por el estudiante para aprobar la evaluación o el porcentaje mínimo correcto si es 'basado en porcentaje'.",
                   "validators": ["number"]
                 }
               }
@@ -102,7 +102,7 @@
                   "title": "Aprobado",
                   "inputType": "Number",
                   "default": 60,
-                  "help": "La puntuación mínima requerida por el alumno para aprobar la evaluación o la puntuación porcentual mínima si está 'basada en porcentajes'.",
+                  "help": "La puntuación mínima requerida por el estudiante para aprobar la evaluación o la puntuación porcentual mínima si está 'basada en porcentajes'.",
                   "validators": ["number"]
                 },
                 "_correctToPass": {
@@ -111,7 +111,7 @@
                   "title": "Número minimo de preguntas correctas",
                   "inputType": "Number",
                   "default": 60,
-                  "help": "El número mínimo de preguntas correctas requeridas por el alumno para aprobar la evaluación o el porcentaje mínimo correcto si es 'basado en porcentaje'.",
+                  "help": "El número mínimo de preguntas correctas requeridas por el estudiante para aprobar la evaluación o el porcentaje mínimo correcto si es 'basado en porcentaje'.",
                   "validators": ["number"]
                 },
                 "_includeInTotalScore": {
@@ -186,7 +186,7 @@
                       "title": "Recuento de bloques",
                       "inputType": "Number",
                       "validators": ["number"],
-                      "help": "El número de bloques para presentar al alumno. Establézcalo en -1 (o 0) para mostrar todos los bloques."
+                      "help": "El número de bloques para presentar al estudiante. Establézcalo en -1 (o 0) para mostrar todos los bloques."
                     }
                   }
                 },
@@ -238,33 +238,33 @@
                         "options": [{"val": "soft", "label": "suave"}, {"val": "hard", "label": "fuerte"}]
                       },
                       "validators": [],
-                      "help": "Determina si la pregunta se registrará como completada cuando se restablezca. Cuando se le asigna un valor de 'suave', el alumno puede continuar interactuando con él, pero el atributo completo permanece establecido en verdadero. Cuando se asigna 'fuerte', completo se establece en falso, y el alumno se verá obligado a completarlo nuevamente si se reinicia. Para 'suave', al usar el truco, establezca el atributo de finalización del truco en `_isInteractionComplete'."
+                      "help": "Determina si la pregunta se registrará como completada cuando se restablezca. Cuando se le asigna un valor de 'suave', el estudiante puede continuar interactuando con él, pero el atributo completo permanece establecido en verdadero. Cuando se asigna 'fuerte', completo se establece en falso, y el estudiante se verá obligado a completarlo nuevamente si se reinicia. Para 'suave', al usar el truco, establezca el atributo de finalización del truco en `_isInteractionComplete'."
                     },
                     "_canShowFeedback": {
                       "type": "boolean",
                       "required": false,
-                      "title": "Mostrar comentarios",
+                      "title": "Mostrar retroalimentación",
                       "inputType": "Checkbox",
                       "default": false,
-                      "help": "Permite al usuario ver comentarios sobre su respuesta.",
+                      "help": "Permite al usuario ver la retroalimentación sobre su respuesta.",
                       "validators": []
                     },
                     "_canShowMarking": {
                       "type": "boolean",
                       "required": false,
-                      "title": "Mostrar marcado",
+                      "title": "Mostrar respuesta seleccionada",
                       "inputType": "Checkbox",
                       "default": false,
-                      "help": "Muestra marcas al completar una pregunta.",
+                      "help": "Muestra la respuesta seleccionada al completar una pregunta.",
                       "validators": []
                     },
                     "_canShowModelAnswer": {
                       "type": "boolean",
                       "required": false,
-                      "title": "Mostrar respuesta modelo",
+                      "title": "Mostrar respuesta correcta",
                       "inputType": "Checkbox",
                       "default": false,
-                      "help": "Permite al usuario ver la 'respuesta modelo' en caso de que responda la pregunta incorrectamente.",
+                      "help": "Permite al usuario ver la 'respuesta correcta' en caso de que responda la pregunta incorrectamente.",
                       "validators": []
                     }
                   }
