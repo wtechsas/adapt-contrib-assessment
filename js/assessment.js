@@ -372,7 +372,7 @@ class Assessment extends Backbone.Controller {
 
     const canRetry = Object.values(states).some(state => {
       const isFailed = !state.isPass;
-      const hasAttemptsLeft = (state.attemptsLeft > 0 || state.attemptsLeft === 'infinite');
+      const hasAttemptsLeft = (state.attemptsLeft > 0 || state.attemptsLeft === 'infinitos');
       return (isFailed && hasAttemptsLeft);
     });
 

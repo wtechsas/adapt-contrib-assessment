@@ -22,7 +22,7 @@ const assessmentConfigDefaults = {
   _assessmentWeight: 1,
   _isResetOnRevisit: true,
   _reloadPageOnReset: true,
-  _attempts: 'infinite',
+  _attempts: 'infinitos',
   _allowResetIfPassed: false
 };
 
@@ -52,8 +52,8 @@ const AssessmentModel = {
 
     let attemptsLeft;
     switch (assessmentConfig._attempts) {
-      case 'infinite': case 0: case undefined: case -1: case null:
-        attemptsLeft = 'infinite';
+      case 'infinitos': case 0: case undefined: case -1: case null:
+        attemptsLeft = 'infinitos';
         break;
       default:
         attemptsLeft = assessmentConfig._attempts;
@@ -125,7 +125,7 @@ const AssessmentModel = {
   _setupAssessmentData(force, callback) {
     const assessmentConfig = this.getConfig();
     const state = this.getState();
-    const hasAttemptsLeft = (state.attemptsLeft > 0 || state.attemptsLeft === 'infinite');
+    const hasAttemptsLeft = (state.attemptsLeft > 0 || state.attemptsLeft === 'infinitos');
     const isFirstAttempt = (state.attemptsSpent === 0);
     const shouldResetOnRevisit = (isFirstAttempt || assessmentConfig._isResetOnRevisit) && !this.get('_attemptInProgress');
     const shouldResetAssessment = (shouldResetOnRevisit && !state.isPass && hasAttemptsLeft) || force === true;
@@ -417,7 +417,7 @@ const AssessmentModel = {
     let attemptsSpent = this.get('_attemptsSpent');
     this.set('_attemptsSpent', ++attemptsSpent);
 
-    if (this.get('_attempts') === 'infinite') return true;
+    if (this.get('_attempts') === 'infinitos') return true;
 
     let attemptsLeft = this.get('_attemptsLeft');
     this.set('_attemptsLeft', --attemptsLeft);
@@ -686,7 +686,7 @@ const AssessmentModel = {
       _assessmentCompleteInSession: false,
       _attemptsSpent,
       _attemptInProgress,
-      _attemptsLeft: (attempts === 'infinite' ? attempts : attempts - _attemptsSpent),
+      _attemptsLeft: (attempts === 'infinitos' ? attempts : attempts - _attemptsSpent),
       _maxScore: maxScore || this._getMaxScore(),
       _minScore: minScore || this._getMinScore(),
       _score: score || 0,
