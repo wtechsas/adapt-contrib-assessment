@@ -65,7 +65,7 @@
                   "type": "boolean",
                   "required": true,
                   "title": "¿Activar?",
-                  "default": false,
+                  "default": true,
                   "inputType": "Checkbox",
                   "validators": [],
                   "help": "Permite establecer los criterios de evaluación en un recurso"
@@ -246,7 +246,7 @@
                       "required": false,
                       "title": "Mostrar retroalimentación",
                       "inputType": "Checkbox",
-                      "default": false,
+                      "default": true,
                       "help": "Permite al usuario ver la retroalimentación sobre su respuesta.",
                       "validators": []
                     },
@@ -255,7 +255,7 @@
                       "required": false,
                       "title": "Mostrar respuesta seleccionada",
                       "inputType": "Checkbox",
-                      "default": false,
+                      "default": true,
                       "help": "Muestra la respuesta seleccionada al completar una pregunta.",
                       "validators": []
                     },
