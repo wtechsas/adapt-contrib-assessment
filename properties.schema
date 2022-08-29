@@ -63,9 +63,9 @@
               "properties": {
                 "_isEnabled": {
                   "type": "boolean",
-                  "required": false,
+                  "required": true,
                   "title": "¿Activar?",
-                  "default": true,
+                  "default": false,
                   "inputType": "Checkbox",
                   "validators": [],
                   "help": "Permite establecer los criterios de evaluación en un recurso"
