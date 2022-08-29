@@ -63,7 +63,7 @@
               "properties": {
                 "_isEnabled": {
                   "type": "boolean",
-                  "required": true,
+                  "required": false,
                   "title": "¿Activar?",
                   "default": true,
                   "inputType": "Checkbox",
