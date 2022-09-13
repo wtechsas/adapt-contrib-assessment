@@ -109,7 +109,7 @@
                 "_correctToPass": {
                   "type": "number",
                   "required": false,
-                  "title": "Número minimo de preguntas correctas",
+                  "title": "Número mínimo de preguntas correctas",
                   "inputType": "Number",
                   "default": 60,
                   "help": "El número mínimo de preguntas correctas requeridas por el estudiante para aprobar la evaluación o el porcentaje mínimo correcto si es 'basado en porcentaje'.",
