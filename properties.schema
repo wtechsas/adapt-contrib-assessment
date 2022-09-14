@@ -111,8 +111,7 @@
                   "required": false,
                   "title": "Número mínimo de preguntas correctas",
                   "inputType": "Number",
-                  "default": 60,
-                  "help": "El número mínimo de preguntas correctas requeridas por el estudiante para aprobar la evaluación o el porcentaje mínimo correcto si es 'basado en porcentaje'.",
+                  "help": "El número mínimo de preguntas correctas en los componentes de pregunta, requeridas por el estudiante para aprobar la evaluación o el porcentaje mínimo correcto si es 'basado en porcentaje'.",
                   "validators": ["number"]
                 },
                 "_includeInTotalScore": {
